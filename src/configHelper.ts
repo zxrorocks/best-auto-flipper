@@ -7,7 +7,7 @@ var toml = require('toml')
 let config: Config = {
     INGAME_NAME: '',
     WEBHOOK_URL: '',
-    FLIP_ACTION_DELAY: 100,
+    FLIP_ACTION_DELAY: 0,
     ENABLE_CONSOLE_INPUT: true,
     USE_COFL_CHAT: true,
     SESSIONS: {},
