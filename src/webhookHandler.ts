@@ -40,7 +40,7 @@ export function sendWebhookInitialized() {
     })
 }
 
-export function sendWebhookItemPurchased(itemName: string, price: string) {
+export function sendWebhookItemPurchased(itemName: string, price: string, target: string) {
     if (!isWebhookConfigured()) {
         return
     }
@@ -59,6 +59,11 @@ export function sendWebhookItemPurchased(itemName: string, price: string) {
                         name: 'Bought for:',
                         value: `\`\`\`${price}\`\`\``,
                         inline: true
+                    },
+                    {
+                        name: 'Estimated Profit:',
+                        value: `\`\`\`${tagret}\`\`\``,
+                        inline: true
                     }
                 ],
                 thumbnail: { url: `https://minotar.net/helm/${ingameName}/600.png` }
@@ -67,7 +72,7 @@ export function sendWebhookItemPurchased(itemName: string, price: string) {
     })
 }
 
-export function sendWebhookItemSold(itemName: string, price: string, purchasedBy: string) {
+export function sendWebhookItemSold(itemName: string, price: string, purchasedBy: string, target: string) {
     if (!isWebhookConfigured()) {
         return
     }
@@ -91,6 +96,11 @@ export function sendWebhookItemSold(itemName: string, price: string, purchasedBy
                         name: 'Sold for:',
                         value: `\`\`\`${price}\`\`\``,
                         inline: true
+                    },
+                     {
+                        name: 'Estimated Profit:',
+                        value: `\`\`\`${target}\`\`\``,
+                        inline: true
                     }
                 ],
                 thumbnail: { url: `https://minotar.net/helm/${ingameName}/600.png` }
@@ -99,7 +109,7 @@ export function sendWebhookItemSold(itemName: string, price: string, purchasedBy
     })
 }
 
-export function sendWebhookItemListed(itemName: string, price: string, duration: number) {
+export function sendWebhookItemListed(itemName: string, price: string, duration: number, target: string) {
     if (!isWebhookConfigured()) {
         return
     }
@@ -118,6 +128,11 @@ export function sendWebhookItemListed(itemName: string, price: string, duration:
                         name: 'Item Price:',
                         value: `\`\`\`${price}\`\`\``,
                         inline: false
+                    },
+                     {
+                        name: 'Estimated Profit:',
+                        value: `\`\`\`${target}\`\`\``,
+                        inline: true
                     },
                     {
                         name: 'AH Duration:',
