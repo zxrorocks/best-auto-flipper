@@ -62,7 +62,7 @@ export function sendWebhookItemPurchased(itemName: string, price: string, target
                     },
                     {
                         name: 'Estimated Profit:',
-                        value: `\`\`\`${tagret}\`\`\``,
+                        value: `\`\`\`${target}\`\`\``,
                         inline: true
                     }
                 ],
